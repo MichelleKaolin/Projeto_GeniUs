@@ -42,34 +42,5 @@ Estudantes universitários que desejam melhorar seu desempenho acadêmico de man
    🛢️ Banco de Dados (Firestore/PostgreSQL)
    |
    🤖 Módulo de IA (OpenAI/Hugging Face)
-```
-
-## 📆 Cronograma de Desenvolvimento
-- 📍 **Fase 1 (Março - Junho 2025)**: Definição de requisitos e prototipagem.
-- 📍 **Fase 2 (Julho - Dezembro 2025)**: Desenvolvimento do MVP.
-- 📍 **Fase 3 (Janeiro - Março 2026)**: Testes, ajustes e lançamento na **Expoweek**.
-
-## 🚀 Como Contribuir
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/projeto-genius.git
-   ```
-2. Crie uma branch para sua feature:
-   ```bash
-   git checkout -b minha-feature
-   ```
-3. Faça commit das mudanças:
-   ```bash
-   git commit -m "Adicionando nova funcionalidade"
-   ```
-4. Envie para o repositório:
-   ```bash
-   git push origin minha-feature
-   ```
-5. Abra um Pull Request.
-
-## 📄 Licença
-Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
 ---
-Desenvolvido com 💡 por [Seu Nome] e equipe GeniUs 🚀
+Desenvolvido com 💡 por Michelle Kaolin 🚀
