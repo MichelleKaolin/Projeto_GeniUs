@@ -1,4 +1,5 @@
-## 3. GeniUs 📚 GeniUs Project 📌 Overview
+## 3.Project  GeniUs 📚   
+📌 Overview
 GeniUs is a gamified study application that uses Artificial Intelligence to create personalized daily challenges and promotes competitions among university students. The goal is to increase study engagement in an interactive and fun way.
 ## 🎯 Objectives
 
