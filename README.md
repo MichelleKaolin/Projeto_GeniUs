@@ -38,6 +38,3 @@ Mobile App (Flutter/React Native) -> Backend API (Node.js/Django) -> Database (F
 ## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 Developed with 💡 by Michelle Kaolin 🚀
-------------------------------
-Você gostaria que eu ajustasse algum termo técnico específico ou adicionasse uma seção de instalação mais detalhada em algum deles?
-
