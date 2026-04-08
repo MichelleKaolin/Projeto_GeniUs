@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GeniUs - {{ user.name }}</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #FF2D55;
+  --green: #00C851;
+  --blue: #007AFF;
+  --orange: #FF6B00;
+  --yellow: #FFD60A;
+  --bg: #0A0A0F;
+  --bg2: #14141C;
+  --bg3: #1C1C28;
+  --card: #1E1E2E;
+  --border: rgba(255,255,255,0.08);
+  --text: #F0F0FF;
+  --text2: #9090B0;
+  --text3: #5A5A7A;
+  --radius: 16px;
+  --shadow: 0 8px 40px rgba(0,0,0,0.4);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+a { color: var(--orange); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.header {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.logo { font-family:'Syne',sans-serif; font-size:28px; font-weight:800; background:linear-gradient(135deg,var(--yellow),var(--orange)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.back-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.back-btn:hover { background: var(--orange); color: #fff; border-color: var(--orange); text-decoration: none; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 32px 40px; }
+
+.profile-header {
+  background: linear-gradient(135deg, var(--orange) 0%, var(--red) 50%, #C0006B 100%);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: #fff;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.profile-info h2 { font-family:'Syne',sans-serif; font-size: 28px; font-weight: 800; color: #fff; }
+.profile-info p { color: rgba(255,255,255,0.75); font-size: 14px; margin-top: 4px; }
+.profile-stats {
+  margin-left: auto;
+  display: flex;
+  gap: 24px;
+}
+.profile-stat { text-align: center; }
+.profile-stat-val { font-family:'Syne',sans-serif; font-size: 28px; font-weight: 800; color: #fff; }
+.profile-stat-label { font-size: 12px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: .5px; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+@media(max-width:900px) { .stats-grid { grid-template-columns: repeat(2,1fr); } }
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.stat-label { font-size: 12px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 8px; }
+.stat-val { font-family:'Syne',sans-serif; font-size: 32px; font-weight: 800; }
+
+.c-blue { color: var(--blue); }
+.c-green { color: var(--green); }
+.c-orange { color: var(--orange); }
+.c-yellow { color: var(--yellow); }
+.c-red { color: var(--red); }
+
+.section-title {
+  font-family:'Syne',sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+@media(max-width:900px) { .two-col { grid-template-columns: 1fr; } }
+
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; padding: 10px 14px; font-size: 12px; font-weight: 700; color: var(--text2); text-transform: uppercase; letter-spacing: .5px; border-bottom: 1px solid var(--border); }
+td { padding: 12px 14px; border-bottom: 1px solid var(--border); font-size: 14px; }
+tr:hover { background: var(--bg3); }
+
+.progress-bar { height: 8px; background: var(--bg3); border-radius: 4px; overflow: hidden; margin-top: 6px; }
+.progress-fill { height: 100%; border-radius: 4px; }
+
+.badge-completed { background: rgba(0,200,81,.15); color: var(--green); padding: 4px 10px; border-radius: 50px; font-size: 12px; font-weight: 600; }
+.badge-incomplete { background: rgba(255,45,85,.15); color: var(--red); padding: 4px 10px; border-radius: 50px; font-size: 12px; font-weight: 600; }
+
+.fraud-event {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--bg3);
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+.fraud-icon { font-size: 20px; }
+.fraud-info { flex: 1; }
+.fraud-type { font-weight: 600; font-size: 14px; }
+.fraud-detail { font-size: 12px; color: var(--text2); }
+.fraud-penalty { font-family:'Syne',sans-serif; font-weight: 800; color: var(--red); font-size: 14px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="/dashboard" class="logo" style="text-decoration:none;">geniUs</a>
+  <a href="/dashboard" class="back-btn">← Voltar ao Dashboard</a>
+</div>
+
+<div class="container">
+  <!-- Profile Header -->
+  <div class="profile-header">
+    <div class="profile-avatar">{{ user.name[0] if user.name else '?' }}</div>
+    <div class="profile-info">
+      <h2>{{ user.name }}</h2>
+      <p>{{ user.email }}</p>
+      <p>{{ user.university }} · {{ user.course }}</p>
+    </div>
+    <div class="profile-stats">
+      <div class="profile-stat">
+        <div class="profile-stat-val">{{ "{:,}".format(user.xp_total) }}</div>
+        <div class="profile-stat-label">XP Total</div>
+      </div>
+      <div class="profile-stat">
+        <div class="profile-stat-val">#{{ ranking }}</div>
+        <div class="profile-stat-label">Ranking</div>
+      </div>
+      <div class="profile-stat">
+        <div class="profile-stat-val">{{ user.level }}</div>
+        <div class="profile-stat-label">Nivel</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Stats -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-label">Precisao</div>
+      <div class="stat-val c-green">{{ accuracy }}%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Questoes Respondidas</div>
+      <div class="stat-val c-blue">{{ total_answers }}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Respostas Corretas</div>
+      <div class="stat-val c-orange">{{ total_correct }}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Sequencia</div>
+      <div class="stat-val c-red">🔥 {{ user.streak_days }}</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <!-- Subject Performance -->
+    <div class="card">
+      <div class="section-title">📚 Desempenho por Disciplina</div>
+      {% for subj in subjects_data %}
+      <div style="margin-bottom:16px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+          <span>{{ subj.icon }} {{ subj.name }}</span>
+          <span style="font-size:13px;color:var(--text2);">{{ subj.accuracy }}% ({{ subj.correct }}/{{ subj.questions }})</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:{{ subj.progress }}%;background:linear-gradient(90deg,var(--blue),var(--orange));"></div>
+        </div>
+      </div>
+      {% endfor %}
+      {% if not subjects_data %}
+      <p style="color:var(--text2);text-align:center;padding:20px;">Nenhuma disciplina registrada</p>
+      {% endif %}
+    </div>
+
+    <!-- Anti-fraud Events -->
+    <div class="card">
+      <div class="section-title">🛡️ Eventos Antifraude</div>
+      {% for event in fraud_events %}
+      <div class="fraud-event">
+        <div class="fraud-icon">
+          {% if event.event_type == 'copy_paste' %}📋
+          {% elif event.event_type == 'tab_switch' %}🔀
+          {% elif event.event_type == 'screen_change' %}🖥️
+          {% elif event.event_type == 'suspicious_speed' %}⚡
+          {% else %}⚠️{% endif %}
+        </div>
+        <div class="fraud-info">
+          <div class="fraud-type">{{ event.event_type }}</div>
+          <div class="fraud-detail">{{ event.details if event.details else 'Sem detalhes' }} · {{ event.created_at.strftime('%d/%m/%Y %H:%M') if event.created_at else '' }}</div>
+        </div>
+        <div class="fraud-penalty">-{{ event.penalty_xp }} XP</div>
+      </div>
+      {% endfor %}
+      {% if not fraud_events %}
+      <p style="color:var(--green);text-align:center;padding:20px;">Nenhum evento de fraude detectado</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Recent Attempts -->
+  <div class="card">
+    <div class="section-title">📝 Tentativas Recentes</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Desafio</th>
+          <th>Pontuacao</th>
+          <th>XP Ganho</th>
+          <th>Status</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for a in attempts_data %}
+        <tr>
+          <td>{{ a.challenge_title }}</td>
+          <td>{{ a.score }}/{{ a.total }}</td>
+          <td><span style="color:var(--yellow);font-weight:700;">+{{ a.xp_earned }} XP</span></td>
+          <td>
+            {% if a.completed %}
+            <span class="badge-completed">Concluido</span>
+            {% else %}
+            <span class="badge-incomplete">Em andamento</span>
+            {% endif %}
+          </td>
+          <td style="color:var(--text2);font-size:13px;">{{ a.date }}</td>
+        </tr>
+        {% endfor %}
+        {% if not attempts_data %}
+        <tr><td colspan="5" style="text-align:center;color:var(--text2);padding:20px;">Nenhuma tentativa registrada</td></tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
