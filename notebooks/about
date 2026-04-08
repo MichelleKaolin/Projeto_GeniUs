@@ -1,0 +1,82 @@
+# 🧠 GeniUs — Smart Learning Platform
+
+## 📌 Overview
+GeniUs is a smart learning platform designed to enhance student productivity through gamification, performance tracking, and interactive study tools.
+
+The system is built with both **web and mobile interfaces**, ensuring accessibility and a consistent user experience across devices.
+
+---
+
+## 🎯 Objectives
+- Improve study efficiency
+- Provide structured learning environments
+- Encourage engagement through gamification
+- Track user progress over time
+
+---
+
+## 🖥️ Web Version
+
+### Features
+- Landing page with authentication
+- Dashboard with study overview
+- Subject organization
+- Performance indicators
+
+### Technologies
+- HTML, CSS, JavaScript
+- Responsive UI design
+- Component-based layout
+
+---
+
+## 📱 Mobile Version
+
+### Features
+- Mobile-first interface
+- Touch-optimized navigation
+- Simulated device UI (iPhone-like shell)
+- Compact dashboard
+
+### Differences from Web
+- Simplified layout
+- Focus on quick interactions
+- Optimized for smaller screens
+
+---
+
+## 🧩 System Architecture
+Frontend (Web + Mobile)
+↓
+JavaScript Logic
+↓
+Backend (future integration)
+↓
+Database
+
+---
+
+## 🎨 UI/UX Design
+
+- Dark mode default
+- Neon-inspired color palette
+- Smooth animations
+- Focus on readability and engagement
+
+---
+
+## 🚀 Future Improvements
+
+- Backend integration
+- Real-time data sync
+- AI-powered recommendations
+- Cross-platform authentication
+
+---
+
+## 🏆 Key Highlights
+
+- Dual interface (Web + Mobile)
+- Strong visual identity
+- Scalable architecture
+- Ready for backend integration
