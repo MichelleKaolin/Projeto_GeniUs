@@ -1,1 +1,0 @@
-/* em construção - apenas dados e funções auxiliares */
